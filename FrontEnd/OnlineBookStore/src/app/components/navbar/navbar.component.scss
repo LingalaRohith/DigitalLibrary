@@ -1,0 +1,69 @@
+.toolbar-item-spacer {
+    flex: 1 1 auto;
+}
+
+.app-container {
+    height: 90%;
+    margin: 0;
+}  
+.app-sidenav {
+    width: 230px;
+}
+
+.align_search{
+    flex-grow: 1.5;
+}
+.logout_align{
+  width: 20%;
+    text-align: end;
+}
+.align_title{
+  width: 80%;
+    
+    text-align: center;
+}
+.mat-drawer-content{
+  overflow: hidden;
+}
+.example-container {
+    width: 230px;
+    height: 300px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+  }
+  
+  .example-sidenav-content {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .example-sidenav {
+    padding: 20px;
+  }
+  
+  .online-book-store {
+    font-size: 20px;
+    color: #ffffff;
+    cursor: pointer;
+    text-transform: uppercase;
+  }
+  
+  .title-icon {
+    font-size: 24px;
+    margin-right: 8px;
+  }
+  .toolbar {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .logout_align {
+    display: flex;
+    float: right;
+  }
+  .logo-container-admin{
+    width:300%;
+  }
+  
+  

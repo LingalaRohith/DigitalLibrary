@@ -1,0 +1,60 @@
+<mat-card class="align_login_card">
+  <mat-card-content class="align_login_content">
+<div class="topContainer" *ngIf="!isforgotpassword">
+    <div class="main">  	
+      
+      <div class="login">
+        <form class="form" [formGroup]="loginFormGroup" class="aligntext_center" autocomplete="off">
+            <label for="chk" aria-hidden="true">Login</label>
+                  <div class="form-field">
+                    <mat-form-field appearance="fill" class="form-full-height">
+                      <mat-label>Username</mat-label>
+                      <input matInput type="text" placeholder="Ex. John" formControlName="UsernameCtrl" 
+                      autocomplete="new-username"  required>
+                    </mat-form-field>
+                  </div>
+                  <div class="form-field">
+                    <mat-form-field class="form-full-height">
+                      
+
+                      <mat-label>Password</mat-label>
+                  <input matInput [type]="hidePassword ? 'password' : 'text'" placeholder="Ex. Qwerty@123" formControlName="PasswordCtrl" autocomplete="new-password" required>
+                  <button mat-icon-button matSuffix (click)="hidePassword = !hidePassword" [attr.aria-label]="hidePassword ? 'Show password' : 'Hide password'" class="show-password-button">
+                    <mat-icon class="show-password-icon">{{ hidePassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+                  </button>
+                    </mat-form-field>
+                  </div>
+                  <div>
+                    <mat-checkbox formControlName="remember">Remember Me</mat-checkbox>
+                  </div>
+                 <div class="form-field">
+                  
+                    <span class="forgot-password" (click)="forgot_password()">Forgot Password?</span>
+                  
+                  
+                </div>
+                  <div>
+                    <button mat-raised-button color="primary" (click)="login()">Login</button>
+                  </div>
+                </form>
+            </div>
+    </div>
+</div>
+<div *ngIf="isforgotpassword">
+  <form class="form" [formGroup]="forgotPasswordGroup" class="aligntext_center" autocomplete="off">
+    <label for="chk" aria-hidden="true">Login</label>
+          <div class="form-field">
+            <mat-form-field appearance="fill" class="form-full-height">
+              <mat-label>Email</mat-label>
+              <input matInput type="text" placeholder="Ex. John" formControlName="email" 
+              autocomplete="new-email"  required>
+            </mat-form-field>
+          </div>
+          
+          <div>
+            <button mat-raised-button color="primary" (click)="Submit_email()">Submit</button>
+          </div>
+        </form>
+</div>
+</mat-card-content>
+</mat-card>

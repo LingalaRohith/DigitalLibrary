@@ -1,0 +1,117 @@
+<div class="adminhome">
+  <div class="align_list">
+    <mat-list>
+
+      <mat-list-item (click)="manage_books()" class="list_item">Manage Books</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item class="list_item" (click)="empty()">Manage Users</mat-list-item>
+      <mat-divider></mat-divider>
+      <!-- <mat-list-item class="list_item" (click)="manage_promotions()">Manage Promotions</mat-list-item> -->
+
+
+    </mat-list>
+
+  </div>
+  <div *ngIf="managebooks" class="managebooks">
+    <h2>Manage Book</h2>
+    <mat-form-field>
+      <mat-label>Filter</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+    </mat-form-field>
+    <div class="add_book" (click)="addbook()"><button mat-raised-button color="primary">Add new book</button></div>
+    <div class="mat-elevation-z8">
+      <table mat-table [dataSource]="dataSource" matSort>
+
+        <!-- ID Column -->
+        <ng-container matColumnDef="bookId">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+          <td mat-cell *matCellDef="let row"> {{row.bookId}} </td>
+        </ng-container>
+
+        <!-- name Column -->
+        <ng-container matColumnDef="title" class="align-name">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+          <td mat-cell *matCellDef="let row"> {{row.title}} </td>
+        </ng-container>
+
+        <!-- image Column -->
+        <ng-container matColumnDef="image_data">
+          <th mat-header-cell *matHeaderCellDef> Image </th>
+          <td mat-cell *matCellDef="let row">
+            <img [src]="row.image_data" class="aline_image">
+          </td>
+        </ng-container>
+        <!-- Price Column -->
+        <ng-container matColumnDef="selling_Price">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Price </th>
+          <td mat-cell *matCellDef="let row"> ${{row.selling_Price}} </td>
+        </ng-container>
+        <!-- Actions Column -->
+        <ng-container matColumnDef="actions" class="align-name">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> actions </th>
+          <td mat-cell *matCellDef="let row">
+            <mat-icon class="pointer" (click)="edit(row)">edit</mat-icon>
+            <mat-icon class="pointer">archive</mat-icon>
+          </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+        <!-- Row shown when there is no matching data. -->
+        <tr class="mat-row" *matNoDataRow>
+          <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+        </tr>
+      </table>
+
+      <mat-paginator [pageSizeOptions]="[5, 10, 15, 20]" aria-label="Select page of users"></mat-paginator>
+    </div>
+
+
+  </div>
+  <!-- <div *ngIf="managepromotions" class="managepromotions">
+    <h2>Add New Promotion</h2>
+    <form [formGroup]="AddPromoForm" class="aligntext_center">
+      <div>
+        <mat-form-field>
+          <mat-label>promoCode</mat-label>
+          <input matInput formControlName="promoCode" placeholder="promoCode" class="bookTitle_align_edit_input">
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <mat-label>startDate</mat-label>
+          
+          <input
+          matInput
+          [min]="minDate"
+         [matDatepicker]="startDate"
+         formControlName="startDate"
+        >
+      <mat-datepicker-toggle matSuffix [for]="startDate"></mat-datepicker-toggle>
+        <mat-datepicker #startDate></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <mat-label>expiryDate</mat-label>
+          <input
+          matInput
+          [min]="AddPromoForm.controls.startDate.value" 
+         [matDatepicker]="expiryDate"
+         formControlName="expiryDate"
+        >
+      <mat-datepicker-toggle matSuffix [for]="expiryDate"></mat-datepicker-toggle>
+        <mat-datepicker #expiryDate></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <mat-label>percentage</mat-label>
+          <input matInput formControlName="percentage" placeholder="percentage" class="coverpage align_edit_input" style="width: 254px;">
+          
+        </mat-form-field>
+      </div>
+      <button mat-raised-button color="primary" (click)="addpromo()">Add Promo</button>
+    </form>
+  </div> -->
+</div>

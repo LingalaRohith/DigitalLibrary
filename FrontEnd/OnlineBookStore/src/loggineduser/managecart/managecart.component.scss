@@ -1,0 +1,55 @@
+.book_details{
+    top: 15%;
+    width: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    .mat-drawer-content{
+      overflow: hidden;
+    }
+    .align_image{
+        float:left ;
+        text-align: left;
+    }
+    .align_details{
+      float: left;
+      text-align: left;
+      padding-left: 20px;
+  }
+  .align_bookname{
+    width: 300px;
+  }
+    .align_desc{
+      width: 340px;
+    word-break: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    line-height: 23px;
+    max-height: 114px;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    }
+    .mat-mdc-card-content{
+        width:700px;
+    }
+    .mat-mdc-text-field-wrapper.mdc-text-field.ng-tns-c1205077789-3.mdc-text-field--filled.mdc-text-field--no-label{
+        width: 60px;
+      }
+      .quantity{
+        width:50px;
+      }
+      .mat-mdc-form-field{
+        width:50px;
+      }
+      .mat-form-field.mat-mdc-form-field.ng-tns-c1205077789-3.mat-mdc-form-field-type-mat-input.mat-form-field-appearance-fill.mat-primary.ng-star-inserted {
+        width: 50px;
+    }  
+    .product_image{
+        width: 300px;
+    height: 350px;
+    }
+}

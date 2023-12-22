@@ -1,0 +1,46 @@
+<div>
+    <h2 mat-dialog-title>Edit Shipping Address</h2>
+        <mat-dialog-content class="mat-typography">
+            <div >
+                <form [formGroup]="AddressGroup">
+                    <div>
+                    <mat-form-field>
+                        <mat-label>New Street</mat-label>
+                        <input matInput formControlName="new_street" placeholder="Enter street name:">
+    
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field>
+                        <mat-label>New City</mat-label>
+                        <input matInput formControlName="new_city" placeholder="Enter City name:">
+    
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field>
+                        <mat-label>New State</mat-label>
+                        <input matInput formControlName="new_state" placeholder="Enter state :">
+    
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field>
+                        <mat-label>New ZipCode</mat-label>
+                        <input matInput formControlName="new_zipcode" placeholder="Enter Zipcode:">
+    
+                    </mat-form-field>
+                </div>
+                    
+                </form>
+                
+        
+            </div>
+        </mat-dialog-content>
+        <mat-dialog-actions align="end">
+            <button mat-button mat-dialog-close>Cancel</button>
+            <div>
+                <button mat-raised-button mat-raised-button  mat-dialog-close color="primary" (click)="save_addr()" type="button">Save</button>
+            </div>
+        </mat-dialog-actions>
+    </div>

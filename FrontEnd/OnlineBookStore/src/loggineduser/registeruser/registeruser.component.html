@@ -1,0 +1,163 @@
+<div class="topContainer">
+  <div class="main">
+    <div class="signup">
+
+      <label for="chk" aria-hidden="true">Sign up</label>
+
+      <mat-stepper [linear]="isLinear" #stepper>
+        <mat-step [stepControl]="firstFormGroup">
+          <form [formGroup]="firstFormGroup" class="aligntext_center">
+            <ng-template matStepLabel>Fill out your Personal Info</ng-template>
+            <div class="form-field">
+              <mat-form-field class="form-full-height">
+                <mat-label>First Name</mat-label>
+                <input matInput  formControlName="firstNameCtrl" required>
+                <mat-error *ngIf="!firstFormGroup.controls.firstNameCtrl.valid">First Name is not Valid </mat-error>
+              </mat-form-field>
+            </div>
+            <div class="form-field">
+              <mat-form-field class="form-full-height">
+                <mat-label>Last Name</mat-label>
+                <input matInput  formControlName="lastNameCtrl" required>
+                <mat-error *ngIf="!firstFormGroup.controls.lastNameCtrl.valid">Last Name is not valid </mat-error>
+              </mat-form-field>
+            </div>
+         
+            <div class="form-field">
+              <mat-form-field class="form-full-height">
+                <mat-label>Email</mat-label>
+                <input matInput  formControlName="emailCtrl" required>
+                <mat-error *ngIf="!firstFormGroup.controls.emailCtrl.valid">Email is not valid </mat-error>
+              </mat-form-field>
+            </div>
+            <div class="form-field">
+              <mat-form-field class="form-full-height">
+                  <mat-label>Password</mat-label>
+                  <input matInput [type]="hidePassword ? 'password' : 'text'" placeholder="Password" formControlName="passwordCtrl" required>
+                  <button mat-icon-button matSuffix (click)="hidePassword = !hidePassword" [attr.aria-label]="hidePassword ? 'Show password' : 'Hide password'" class="show-password-button">
+                    <mat-icon class="show-password-icon">{{ hidePassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+                  </button>
+                  <mat-error *ngIf="firstFormGroup.get('passwordCtrl')?.hasError('passwordStrength')">{{ firstFormGroup.get('passwordCtrl')?.errors?.['passwordStrength'] }} </mat-error>
+              </mat-form-field>
+            </div>
+            <div class="form-field">
+              <mat-form-field class="form-full-height">
+                <mat-label>Mobile Number</mat-label>
+                <input matInput  formControlName="mobileCtrl" required>
+                <mat-error *ngIf="!firstFormGroup.controls.mobileCtrl.valid">Mobile Number is not valid </mat-error>
+              </mat-form-field>
+            </div>
+            <!-- <div class="form-field">
+              
+                <mat-checkbox class="promotion_checkbox" formControlName="subscribe_promo">Subscribe to promotions</mat-checkbox>
+              
+            </div> -->
+            <div>
+              <button mat-raised-button color="primary" matStepperNext class="button_width">Next</button>
+            </div>
+          </form>
+        </mat-step>
+        <mat-step [stepControl]="secondFormGroup" label="Fill out your shipping address">
+          <form [formGroup]="secondFormGroup" class="aligntext_center">
+            <br>
+            <div class="form-field">
+              <mat-form-field class="form-full-height">
+                <mat-label>Street</mat-label>
+                <input matInput formControlName="streetCtrl"  >
+              </mat-form-field>
+            </div>
+            <div class="form-field">
+              <mat-form-field class="form-full-height">
+                <mat-label>City</mat-label>
+                <input matInput formControlName="cityCtrl" >
+              </mat-form-field>
+            </div>
+            <div class="form-field">
+              <h4>State</h4>
+              <mat-form-field class="form-full-height">
+                <mat-label>Select State</mat-label>
+                <mat-select formControlName="stateCtrl">
+                  <mat-option *ngFor="let state of states" [value]="state.value">
+                    {{ state.viewValue }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="form-field">
+              <mat-form-field class="form-full-height">
+                <mat-label>Zip Code</mat-label>
+                <input matInput formControlName="zipCtrl" >
+              </mat-form-field>
+            </div>
+            <div>
+              <button mat-raised-button color="primary" class="button_width" matStepperPrevious>Back</button>
+              <br>
+              <button mat-raised-button color="primary" class="button_width" matStepperNext>Next</button>
+            </div>
+          </form>
+        </mat-step>
+        <mat-step [stepControl]="thirdFormGroup" label="Fill out your card details">
+          <form [formGroup]="thirdFormGroup" class="aligntext_center">
+            <div class="form-field">
+              <h4>Card Type</h4>
+              <mat-form-field class="form-full-height">
+                <mat-label>Select Card Type</mat-label>
+                <mat-select formControlName="CardCtrl">
+                  <mat-option *ngFor="let card of cards" [value]="card.value">
+                    {{ card.viewValue }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div>
+              <mat-form-field class="form-full-height">
+                <mat-label>Card Number </mat-label>
+                <input matInput formControlName="CardNbrCtrl" >
+              </mat-form-field>
+            </div>
+            <div>
+              <mat-form-field class="form-full-height">
+                <mat-label>Name on Card </mat-label>
+                <input matInput formControlName="CardNameCtrl" >
+              </mat-form-field>
+            </div>
+            <div>
+              <mat-label>Expiration Date</mat-label>
+              <mat-form-field class="form-full-height">
+                <mat-label>Select Month</mat-label>
+
+                <mat-select formControlName="monthCtrl">
+                  <mat-option *ngFor="let month of months" [value]="month.value">
+                    {{ month.viewValue }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field class="form-full-height">
+                <mat-label>Select Year</mat-label>
+
+                <mat-select formControlName="yearCtrl">
+                  <mat-option *ngFor="let year of years" [value]="year.value">
+                    {{ year.viewValue }}
+                  </mat-option>
+                </mat-select>
+
+              </mat-form-field>
+
+            </div>
+            <div>
+              <button mat-raised-button color="primary" matStepperPrevious class="button_width">Back</button>
+              <br>
+              <button mat-raised-button color="primary" (click)="stepper.reset()" class="button_width">Reset</button>
+            </div>
+          </form>
+        </mat-step>
+
+      </mat-stepper>
+
+      <button mat-raised-button color="primary" class="button_width" (click)="signup()">Sign up</button>
+
+
+    </div>
+
+  </div>
+</div>

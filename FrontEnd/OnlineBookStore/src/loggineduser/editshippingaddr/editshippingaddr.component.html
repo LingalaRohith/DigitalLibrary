@@ -1,0 +1,39 @@
+<div>
+<h2 mat-dialog-title>Edit Shipping Address</h2>
+    <mat-dialog-content class="mat-typography">
+        <form  [formGroup]="secondFormGroup" class="aligntext_center">
+            <ng-template matStepLabel>Address</ng-template>
+            <div>
+                <mat-form-field>
+                    <mat-label>street</mat-label>
+                    <input matInput formControlName="street" placeholder="Ex. 1 Main St, New York, NY" required>
+                </mat-form-field>    
+            </div>
+            <div>
+                <mat-form-field>
+                    <mat-label>city</mat-label>
+                    <input matInput formControlName="city" placeholder="city" required>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field>
+                    <mat-label>state</mat-label>
+                    <input matInput formControlName="state" placeholder="state" required>
+                </mat-form-field>
+            </div>         
+            <div>
+                <mat-form-field>
+                    <mat-label>zipCode</mat-label>
+                    <input matInput formControlName="zipCode" placeholder="zipCode" required>
+                </mat-form-field>
+            </div>
+            
+        </form>
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+        <button mat-button mat-dialog-close>Cancel</button>
+        <div>
+            <button mat-raised-button mat-button mat-dialog-close (click)="save_address()" color="primary">Save</button>
+        </div>
+    </mat-dialog-actions>
+</div>

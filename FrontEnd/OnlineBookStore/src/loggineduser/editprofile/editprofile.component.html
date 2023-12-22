@@ -1,0 +1,130 @@
+<div class="editprofile">
+    <div class="align_list">
+    <mat-list >
+        
+        <mat-list-item (click)="click_personal()" class="list_item">Change Personal details</mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item class="list_item" (click)="click_change_pswd()">Change Password</mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item class="list_item" (click)="click_shipping()">Edit Shipping Address</mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item class="list_item" (click)="click_payment()">Edit Payment Details</mat-list-item>
+        
+    </mat-list>
+    
+    </div>
+    <div *ngIf="show_personal_details" class="managebooks">
+        <form [formGroup]="firstFormGroup" class="aligntext_center">
+            <ng-template matStepLabel>Personal Details</ng-template>
+            <div>
+                <mat-form-field>
+                    <mat-label>firstName</mat-label>
+                    <input matInput placeholder="firstName" formControlName="firstName" required>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field>
+                    <mat-label>lastName</mat-label>
+                    <input matInput placeholder="lastName" formControlName="lastName" required>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field>
+                    <mat-label>mobileNo</mat-label>
+                    <input matInput placeholder="mobileNo" formControlName="mobileNo" required>
+                </mat-form-field>
+            </div>
+
+            <!-- <div>
+                <mat-checkbox formControlName="subscription">Subscribe for Promotions</mat-checkbox>
+            </div> -->
+            <div>
+                <button mat-raised-button mat-button  color="primary" (click)="save_callapi()">Save</button>
+            </div>
+        </form>
+    </div>
+    <div *ngIf="show_change_pswd" class="managebooks">
+        <form [formGroup]="passwordFormGroup" class="aligntext_center">
+            <ng-template matStepLabel>Change Password</ng-template>
+            <div>
+                <mat-form-field>
+                    <mat-label>Password</mat-label>
+                    <input matInput [type]="hidePassword ? 'password' : 'text'" placeholder="Password" formControlName="password" required>
+                    <button mat-icon-button matSuffix (click)="hidePassword = !hidePassword" [attr.aria-label]="hidePassword ? 'Show password' : 'Hide password'" class="show-password-button">
+                      <mat-icon class="show-password-icon">{{ hidePassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+                    </button>
+                  </mat-form-field>
+                  
+                  
+            </div>
+            <div>
+                <mat-form-field>
+                    <mat-label>Confirm Password</mat-label>
+                    <input matInput [type]="hideConfirmPassword ? 'password' : 'text'" placeholder="Confirm Password" formControlName="confirmPassword" required>
+                    <button mat-icon-button matSuffix (click)="hideConfirmPassword = !hideConfirmPassword" [attr.aria-label]="hideConfirmPassword ? 'Show password' : 'Hide password'" class="show-password-button">
+                      <mat-icon class="show-password-icon">{{ hideConfirmPassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+                    </button>
+                  </mat-form-field>
+                  
+                  
+            </div>
+            <div>
+                <button mat-raised-button mat-button  color="primary" (click)="save_callapi()">Save</button>
+            </div>
+        </form>
+    </div>
+    <div *ngIf="show_shipping" class="managebooks">
+        <div class="margin-left25">
+        <mat-card class="align_card_address" *ngIf="shipping_details.length>0" 
+            >
+            <mat-card-content *ngFor="let addr of shipping_details;let i=index">
+                <div>
+                    <h2>Shipping Info 
+                        <div class="floatright">
+                        <mat-icon (click)="new_address()">add</mat-icon>
+                        <mat-icon (click)="edit_address(addr,i)">edit</mat-icon>
+                        <mat-icon (click)="delete_address(addr)">delete</mat-icon>
+                    </div>
+                    </h2>
+                    
+                    <div>{{addr.street}}</div>
+                    <div>{{addr.city}}</div>
+                    <div>{{addr.state}}</div>
+                    <div>{{addr.zipCode}}</div>
+                </div>
+            </mat-card-content>
+          </mat-card>
+          <button mat-raised-button  color="primary"  *ngIf="shipping_details.length==0" 
+              (click)="new_address()">Add new Address</button>
+        </div>
+   
+    </div>
+    <div *ngIf="show_payment" class="managebooks">
+        <div class="margin-left25">
+            <mat-card class="align_card_address" *ngIf="payment_details.length>0">
+                <mat-card-content *ngFor="let card of payment_details;let i=index">
+                    <div>
+                        <h2>Payment Info 
+                            <div class="floatright">
+                            <mat-icon (click)="new_payment()">add</mat-icon>
+                            <mat-icon (click)="edit_payment(card,i)">edit</mat-icon>
+                            <mat-icon (click)="delete_card(card)">delete</mat-icon>
+                        </div>
+                        </h2>
+                        <div><b>Name on Card:  </b>{{card.cardHolder}}</div>
+                        <div><b>Type of Card:  </b>{{card.cardType}}</div>
+                        <div><b>Expiry:  </b>{{card.expDate}}</div>
+                        <div><b>Card_no:  </b>Card ending with ****{{card.cardNumber.slice(-4)}}</div>
+                        
+                    </div>
+                </mat-card-content>
+              </mat-card>
+              <button mat-raised-button  color="primary"  *ngIf="payment_details.length==0" 
+              (click)="new_payment()">Add new Payment</button>
+        </div>
+        
+        
+        
+       
+    </div>
+</div>

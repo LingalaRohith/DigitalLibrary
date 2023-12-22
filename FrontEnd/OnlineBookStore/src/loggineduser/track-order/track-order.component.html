@@ -1,0 +1,18 @@
+<div class="card">
+    <p-timeline [value]="events" align="alternate" styleClass="customized-timeline" >
+        <ng-template pTemplate="marker" let-event>
+            <span class="custom-marker shadow-2 align_timelineicon" [style.backgroundColor]="event.color">
+                <i [ngClass]="event.icon"></i>
+            </span>
+        </ng-template>
+        <ng-template pTemplate="content" let-event>
+            <p-card [header]="event.status" [subheader]="event.date" [id]="event.status">
+                <img *ngIf="event.image" [src]="event.image" [alt]="event.name" width="50px" class="shadow-2" />
+                <p class="align_des">
+                    {{event.desc}}
+                </p>
+                
+            </p-card>
+        </ng-template>
+    </p-timeline>
+</div>

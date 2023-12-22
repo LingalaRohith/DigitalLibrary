@@ -1,0 +1,24 @@
+<div class="searchbooks">
+    <form [formGroup]="SearchForm" class="search-form">
+      <div class="search-input" >
+        <mat-form-field class="dropdown_align">
+          <mat-label>Filter By</mat-label>
+          <mat-select formControlName="filterOption">
+            <mat-option *ngFor="let item of products" [value]="item.value">
+              {{ item.viewValue }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="search-input">
+        <mat-form-field>
+          <input matInput formControlName="userInput" placeholder="Search" class="search">
+        </mat-form-field>
+      </div>
+  
+      <button mat-icon-button (click)="doSearch()" class="search-icon">
+        <mat-icon>search</mat-icon>
+      </button>
+    </form>
+  </div>
+  

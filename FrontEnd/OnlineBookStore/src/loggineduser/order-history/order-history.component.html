@@ -1,0 +1,38 @@
+<h2 class="aligntext_center">Order History</h2>
+
+<div class="order-history-container">
+  <mat-card
+    class="book_details custom-card"
+    [ngClass]="{'custom-card': true}"
+    *ngFor="let order of items_prevorders; let outerIndex = index"
+    [style.background-color]="getCardColor(outerIndex)"
+  >
+    <mat-card-content>
+      <div class="align_date">{{ order.Date }}</div>
+      <div *ngFor="let item of order.orders">
+        <div class="align_date">Total Amount: ${{ item.totalAmount }}</div>
+        <div class="align_date">Confirmation Number: {{ item.confirmationNumber }}</div>
+        <div class="align_date">Order Status: {{ item.orderStatus }}</div>
+        <div class="align_details" *ngFor="let items of item.orderHistoryItems; let innerIndex = index">
+          <div class="align_bookname">
+            <p><b>{{ items.title }}</b></p>
+          </div>
+          <div>
+            <p><b>${{ items.price }}</b></p>
+          </div>
+          <div>
+            <p><b>Author:</b> {{ items.author }}</p>
+          </div>
+          <div>
+            <p><b>Quantity:</b> {{ items.quantity }}</p>
+          </div>
+          
+        </div>
+      </div>
+    </mat-card-content>
+      <button mat-raised-button color="primary" class="button_align" (click)="Reorder(order)">
+        Reorder
+      </button>
+    
+  </mat-card>
+</div>

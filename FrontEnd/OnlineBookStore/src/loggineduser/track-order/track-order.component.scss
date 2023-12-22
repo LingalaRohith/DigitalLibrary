@@ -1,0 +1,20 @@
+.align_timelineicon{
+    z-index: 1!important;
+    height: 2rem!important;
+    width: 2rem!important;
+    border-radius: 50%!important;
+    box-shadow: 0 3px 5px #00000005,0 0 2px #0000000d,0 1px 4px #00000014!important;
+    align-items: center!important;
+    justify-content: center!important;
+    display: flex!important;
+    color: #fff!important;
+}
+.p-card.p-component{
+    max-width: 224px !important;
+}
+    #Processing,#Delivered{
+    float: right;
+}
+.align_des{
+    text-align: left;
+}

@@ -1,0 +1,99 @@
+<mat-stepper [linear]="isLinear" #stepper>
+    <mat-step>
+
+        <ng-template matStepLabel>Confirm Order </ng-template>
+        <app-managecart></app-managecart>
+        <!-- <form class="form" [formGroup]="promotionFormGroup" class="aligntext_center" autocomplete="off">
+            
+                  <div class="form-field">
+                    <mat-form-field appearance="fill" class="form-full-height">
+                      <mat-label>Enter Promotional Code:</mat-label>
+                      <input matInput type="text" placeholder="Ex. John" formControlName="promotionCode" 
+                      >
+                    </mat-form-field>
+                  </div>
+                 
+                  <div class="align_applybtn">
+                    <button mat-raised-button color="primary" (click)="apply_promotion()">Apply</button>
+                  </div>
+        </form> -->
+        <!-- <div *ngIf="showupdatedTotal">
+            <div><b>The total amount after applying promotion is</b>${{updatedtotal}}</div>
+        </div> -->
+        <div class="aligntext_center">
+            <button mat-raised-button color="primary" mat-button matStepperNext >Confirm Order</button>
+        </div>
+
+    </mat-step>
+    <mat-step [stepControl]="AddressGroup" label="Shipping Address">
+        <div [formGroup]="AddressGroup">
+            <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                formControlName="addr">
+                <mat-radio-button class="example-radio-button" *ngFor="let addr of shipping_details;let i=index" [value]="addr.addressId">
+                    <mat-card class="align_card_address" >
+                        <mat-card-content>
+                            <div>
+                                <h2>Shipping Info 
+                                    <div class="floatright">
+                                    <mat-icon (click)="new_address()">add</mat-icon>
+                                    <mat-icon (click)="edit_address(addr,i)">edit</mat-icon>
+                                    <mat-icon (click)="delete_address(addr)">delete</mat-icon>
+                                </div>
+                                </h2>
+                                
+                                <div>{{addr.street}}</div>
+                                <div>{{addr.city}}</div>
+                                <div>{{addr.state}}</div>
+                                <div>{{addr.zipCode}}</div>
+                            </div>
+                        </mat-card-content>
+                      </mat-card>
+                </mat-radio-button>
+            </mat-radio-group>
+        </div>
+        <button mat-raised-button color="primary" mat-button (click)="new_address()">Add new Address</button>
+       
+        <div>
+            <button mat-raised-button color="primary" mat-button matStepperPrevious>Back</button>
+            <button mat-raised-button color="primary" mat-button matStepperNext>Next</button>
+
+        </div>
+    </mat-step>
+    <mat-step>
+        <ng-template matStepLabel>Payment</ng-template>
+        <div>
+            <div [formGroup]="PaymentGroup">
+                <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                    formControlName="confirm_card">
+                    <mat-radio-button class="example-radio-button" *ngFor="let card of payment_details;let i=index"
+                        [value]="card.paymentId">
+                        <mat-card class="align_card_address">
+                            <mat-card-content >
+                                <div>
+                                    <h2>Payment Info 
+                                        <div class="floatright">
+                                        <mat-icon (click)="new_payment()">add</mat-icon>
+                                        <mat-icon (click)="edit_payment(card,i)">edit</mat-icon>
+                                        <mat-icon (click)="delete_card(card)">delete</mat-icon>
+                                    </div>
+                                    </h2>
+                                    <div><b>Name on Card:  </b>{{card.cardHolder}}</div>
+                                    <div><b>Type of Card:  </b>{{card.cardType}}</div>
+                                    <div><b>Expiry:  </b>{{card.expDate}}</div>
+                                    <div><b>Card_no:  </b>Card ending with ****{{card.cardNumber.slice(-4)}}</div>
+                                    
+                                </div>
+                            </mat-card-content>
+                          </mat-card>
+                    </mat-radio-button>
+                </mat-radio-group>
+            </div>
+        </div>
+        <button mat-raised-button color="primary"  mat-button (click)="new_payment()">Add new Payment</button>
+        
+        <div>
+            <button mat-raised-button color="primary" mat-button matStepperPrevious>Back</button>
+            <button mat-raised-button color="primary" mat-button (click)="confirm()">Confirm</button>
+        </div>
+    </mat-step>
+</mat-stepper>

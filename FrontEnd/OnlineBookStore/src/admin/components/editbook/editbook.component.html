@@ -1,0 +1,18 @@
+<div class="align_edit_book">
+    <h2 mat-dialog-title class="aligntext_center">Edit Book Price</h2>
+    <mat-dialog-content class="mat-typography">
+        <form [formGroup]="EditBookForm" class="aligntext_center">
+           
+        
+        <div>
+            <mat-form-field>Price:
+                <input matInput formControlName="price" placeholder="price" class="price align_edit_input">
+            </mat-form-field>
+        </div>
+    </form>
+    </mat-dialog-content>
+    <mat-dialog-actions align="center">
+        <button mat-button color="primary" mat-dialog-close>Cancel</button>
+        <button mat-button color="primary" mat-dialog-close (click)="save_book()">Save</button>
+      </mat-dialog-actions>
+    </div>

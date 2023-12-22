@@ -1,0 +1,36 @@
+<div class="show_products">
+    <div class="filters">
+        <section class="matsection_category" [formGroup]="Category_Filter">
+            <h4 class="marginleft10">Filter By Category:</h4>
+            <p><mat-checkbox formControlName="motivaton_category" class="marginleft10" (change)="setAll($event)">Motivation</mat-checkbox></p>
+            <p><mat-checkbox formControlName="drama_category" class="marginleft10" (change)="setAll($event)">Drama</mat-checkbox></p>
+            <p><mat-checkbox formControlName="suspense_category" class="marginleft10" (change)="setAll($event)">Suspense</mat-checkbox></p>
+            <p><mat-checkbox formControlName="fantasy_category" class="marginleft10" (change)="setAll($event)">Fantasy</mat-checkbox></p>
+            <h4 class="marginleft10">Filter by Price:</h4>
+            <h4 class="marginleft10">{{Category_Filter.controls.price_filter.value}}</h4>
+            <mat-slider
+        class="price-margin marginleft10"
+        [disabled]="disabled"
+        [max]="max" 
+        [min]="min"
+        [step]="step"
+        [discrete]="thumbLabel"
+        [showTickMarks]="showTicks"
+        (change)="setAll($event)"
+        >
+      <input matSliderThumb formControlName="price_filter" >
+    </mat-slider>
+          </section>
+          
+          <button mat-raised-button color="primary" (click)="onFilter()" class="marginleft10">Apply Filter</button>
+
+    </div>
+    <div class="back" *ngIf="cart.showBacktoResults" (click)="back_results()">
+        <mat-icon>keyboard_arrow_left</mat-icon>
+        Back to Results
+    </div>
+<div class="products">
+    <app-productlist></app-productlist>
+
+</div>
+</div>

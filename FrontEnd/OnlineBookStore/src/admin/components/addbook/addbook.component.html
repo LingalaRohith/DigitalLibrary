@@ -1,0 +1,90 @@
+<div class="align_add_book">
+    <h2 mat-dialog-title class="aligntext_center">Add Book</h2>
+    <mat-dialog-content class="mat-typography">
+        <form [formGroup]=" AddBookForm" class="aligntext_center">
+            <div>
+            <mat-form-field>
+                <mat-label>Title</mat-label>
+                <input matInput formControlName="bookTitle" placeholder="bookTitle" class="bookTitle align_edit_input">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <mat-label>Author Name</mat-label>
+                <input matInput formControlName="authorname" placeholder="authorname" class="authorname align_edit_input">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <mat-label>ISBN</mat-label>
+                <input matInput formControlName="isbn" placeholder="isbn" class="price align_edit_input">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <mat-label>Category</mat-label>
+                <input matInput formControlName="category" placeholder="category" class="coverpage align_edit_input">
+                
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <mat-label>Publisher</mat-label>
+                <input matInput formControlName="publisher" placeholder="publisher" class="description align_edit_input">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <mat-label>publication Year</mat-label>
+                <input matInput formControlName="publication_Year" placeholder="publication Year" class="description align_edit_input">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <mat-label>edition</mat-label>
+                <input matInput formControlName="edition" placeholder="edition" class="description align_edit_input">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <mat-label>buying_Price</mat-label>
+                <input matInput formControlName="buying_Price" placeholder="buying_Price" class="description align_edit_input">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <mat-label>selling_Price</mat-label>
+                <input matInput formControlName="selling_Price" placeholder="selling_Price" class="description align_edit_input">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <mat-label>quantity</mat-label>
+                <input matInput formControlName="quantity" placeholder="quantity" class="description align_edit_input">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <mat-label>description</mat-label>
+                <input matInput formControlName="description" placeholder="description" class="description align_edit_input">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <mat-label>image URL</mat-label>
+                <input matInput formControlName="image_data" placeholder="image_data" class="description align_edit_input">
+            </mat-form-field>
+        </div>
+        <mat-chip-listbox aria-label="Fish selection">
+            <mat-chip-option (click)="isFeatured()">Featured</mat-chip-option>
+            <mat-chip-option (click)="isNewBook()">New Book</mat-chip-option>
+            <mat-chip-option (click)="isBestseller()">Best Seller</mat-chip-option>
+            
+          </mat-chip-listbox>
+                </form>
+    </mat-dialog-content>
+    <mat-dialog-actions align="center">
+        <button mat-button color="primary" mat-dialog-close>Cancel</button>
+        <button mat-button color="primary" mat-dialog-close (click)="addNewBook()">Save</button>
+    </mat-dialog-actions>
+</div>

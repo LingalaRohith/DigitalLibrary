@@ -1,0 +1,35 @@
+<h2 mat-dialog-title>Product Details
+    <button mat-button mat-dialog-close class="align_close_btn"><mat-icon>close</mat-icon></button>
+</h2>
+<mat-dialog-content class="mat-typography align_dialog">
+    
+    <mat-card class="book_details">
+        <mat-card-content>
+            <div class="align_image">
+                
+         <img mat-card-image [src]="cart.selected_book.image_data" alt="Photo of a product" class="product_image"> 
+            </div>
+           <div class="align_details">
+                <div class="align_bookname"><p><b>{{cart.selected_book.title}}</b></p></div>
+                <div><p><b>${{cart.selected_book.selling_Price}}</b></p></div>
+                <div><p><b>Author: {{cart.selected_book.author}}</b></p></div>
+                <div><p><b>Publisher: {{cart.selected_book.publisher}}</b></p></div>
+                <div *ngIf="cart.selected_book.quantity>0">
+                <button mat-icon-button (click)="removeItem(cart.selected_book)"><mat-icon>indeterminate_check_box</mat-icon></button>
+            <mat-form-field>
+              <input matInput type="number" class="quantity" [(ngModel)]="cart.selected_book.quantity" placeholder="{{cart.selected_book.quantity}}" 
+              value="{{cart.selected_book.quantity}}" (change)="changeQuantity( cart.selected_book, $event)"
+              (click)="setoldvalue(cart.selected_book.quantity)"/>
+            </mat-form-field>
+            <button mat-icon-button (click)="addItem(cart.selected_book)"><mat-icon>add_box</mat-icon></button>
+        </div>
+        <div *ngIf="cart.selected_book.quantity==0">
+            <button mat-raised-button color="primary" mat-button (click)="addtoCart(cart.selected_book)" color="primary">Add to Cart</button>
+        </div>
+            <div class="align_desc aligntext_left"><p>{{cart.selected_book.description}}
+            </p></div>
+           </div> 
+        </mat-card-content>
+    </mat-card>
+</mat-dialog-content>
+

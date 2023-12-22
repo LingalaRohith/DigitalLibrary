@@ -1,0 +1,39 @@
+<div *ngIf="!show_confirmation">
+<h2 mat-dialog-title>Confirmation</h2>
+<mat-dialog-content class="mat-typography">
+    <div>
+    Please enter CVV inorder to proceed to payment
+    </div>
+    <form class="form" [formGroup]="cvvFormGroup" class="aligntext_center" autocomplete="off">
+            
+        <div class="form-field">
+          <mat-form-field appearance="fill" class="form-full-height">
+            <mat-label>Enter CVV:</mat-label>
+            <input matInput type="text" placeholder="Ex. John" formControlName="cvvCode" 
+            required>
+          </mat-form-field>
+        </div>
+</form>
+    <div class="aligntext_center">
+    <button mat-raised-button color="primary" (click)="confirm_cvv()" >Submit</button>
+    <button mat-raised-button color="primary" (click)="redirect_home()" mat-dialog-close>Cancel</button>
+</div>
+</mat-dialog-content>
+</div>
+<div *ngIf="show_confirmation">
+<h2 mat-dialog-title>Successful Confirmation</h2>
+<mat-dialog-content class="mat-typography">
+    <div>
+    Your Payment has been Successful.
+    </div>
+    <div>
+    Please track your order in Track Orders.
+</div>
+<div>
+    Please redirect to Home Page by Clicking on the button below.
+    </div>
+    <div class="aligntext_center">
+    <button mat-raised-button color="primary" (click)="redirect_home()" mat-dialog-close>Home Page</button>
+</div>
+</mat-dialog-content>
+</div>

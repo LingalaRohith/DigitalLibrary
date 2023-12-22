@@ -1,0 +1,59 @@
+<div>
+    <h2 mat-dialog-title>Edit Shipping Address</h2>
+        <mat-dialog-content class="mat-typography">
+            <div >
+                <form [formGroup]="thirdFormGroup" class="aligntext_center">
+                    <ng-template matStepLabel>Payment</ng-template>
+                    <div>
+                        <mat-form-field>
+                            <mat-label>Name on the card:</mat-label>
+                            <input matInput formControlName="NameonCard">
+                        </mat-form-field>
+                    </div>
+                    <div>
+                        <mat-form-field>
+                            <mat-label>Card Type:</mat-label>
+                            <mat-select formControlName="cardType">
+                                <mat-option *ngFor="let typ of type" [value]="typ">
+                                    {{typ}}
+                                </mat-option>
+                            </mat-select>
+        
+                        </mat-form-field>
+                    </div>
+                    <div>
+                        <mat-label>Card Expiry Date:</mat-label>
+                        <mat-form-field>
+                            <mat-label>Month:</mat-label>
+                            <mat-select formControlName="exp_Month">
+                                <mat-option *ngFor="let mon of month" [value]="mon" id="month">
+                                    {{mon}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <mat-label>Year:</mat-label>
+                            <mat-select formControlName="exp_Year">
+                                <mat-option *ngFor="let yr of year" [value]="yr">
+                                    {{yr}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                    <div>
+                        <mat-form-field>
+                            <mat-label>Card No:</mat-label>
+                            <input matInput formControlName="cardNo">
+                        </mat-form-field>
+                    </div>
+                    
+                </form>
+            </div>
+        </mat-dialog-content>
+        <mat-dialog-actions align="end">
+            <button mat-button mat-dialog-close>Cancel</button>
+            <div>
+                <button mat-raised-button mat-button mat-dialog-close (click)="edit_payment()" color="primary">Save</button>
+            </div>
+        </mat-dialog-actions>
+    </div>

@@ -1,0 +1,30 @@
+<div *ngIf="show_otp">
+    <h2 mat-dialog-title>OTP Validation</h2>
+    <div>Please check your email and confirm your account</div>
+    <mat-dialog-content class="mat-typography">
+        <form [formGroup]="OTPFormGroup">
+            <ng-otp-input formControlName="otp" [config]="config" allowNumbersOnly="true">
+
+            </ng-otp-input>
+        </form>
+        <button mat-button color="primary" (click)="validate()">Validate</button>
+        <button mat-button mat-dialog-close>Cancel</button>
+
+    </mat-dialog-content>
+</div>
+
+
+<div *ngIf="!show_otp">
+    <h2 mat-dialog-title>Registration Confirmation</h2>
+    <mat-dialog-content class="mat-typography">
+
+        <div>Your account has been created</div>
+
+        <div>Please proceed to Login by clicking the link below.</div>
+        <button mat-raised-button color="primary" (click)="login_redirect()" mat-dialog-close>Proceed to Login</button>
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+        <button mat-button mat-dialog-close>Cancel</button>
+
+    </mat-dialog-actions>
+</div>

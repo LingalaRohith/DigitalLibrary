@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-OnlineBookStoreApplication<OnlineBookStore>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.uga.bookStore.OnlineBookStoreApplication",
+            "projectName": "OnlineBookStore",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

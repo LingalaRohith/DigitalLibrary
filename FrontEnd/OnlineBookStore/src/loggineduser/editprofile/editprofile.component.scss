@@ -1,0 +1,95 @@
+.editprofile{
+  .align_list{
+      width: 20%;
+      float: left;
+  }
+  .list_item{
+      cursor: pointer;
+  }
+  .managebooks{
+      width: 80%; float:right;
+      padding-left: 10px;
+      padding-top: 20px;
+  }
+  .align_card_address{
+    width:60%;
+  }
+  .margin-left25{
+    margin-left: 25%;
+  }
+  
+ 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.mat-stepper-vertical {
+    margin-top: 8px;
+  }
+  
+  .mat-mdc-form-field {
+    margin-top: 16px;
+  }
+  
+  button{
+    width: 15%;
+    height: 40px;
+    margin: 10px auto;
+    justify-content: center;
+    display: block;
+    color: #ffffff;
+    background: #3f51b5;
+    font-size: 1em;
+    font-weight: bold;
+    margin-top: 20px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    transition: .2s ease-in;
+    cursor: pointer;
+  }
+  .password-field{
+    padding: 16px 16px;
+  }
+  mat-form-field {
+    width: 30% !important;
+  }
+
+  .show-password-button {
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    padding: 0px;
+    line-height: 1;
+  }
+  
+  .show-password-icon {
+    color: #888888;
+    font-size: 16px; /* Adjust the font size as needed */
+  }
+  
+  ::ng-deep .mat-mdc-form-field-has-icon-suffix .mat-mdc-text-field-wrapper {
+    padding-right: 16px !important;
+    padding-bottom: 5px !important;
+  }
+  
+  
+  .mat-raised-button{
+    color:#3f51b5;
+    }
+ 
+    

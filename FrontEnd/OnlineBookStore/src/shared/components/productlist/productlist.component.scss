@@ -1,0 +1,77 @@
+
+  .product{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    .mat-mdc-form-field-infix{
+      width:30px;
+    }
+    .mat-mdc-form-field-flex{
+      width: 25px;
+    }
+    .mat-mdc-text-field-wrapper.mdc-text-field.ng-tns-c1205077789-3.mdc-text-field--filled.mdc-text-field--no-label{
+      width: 60px;
+    }
+    .quantity{
+      width:50px;
+    }
+    .item {
+      max-width: 400px;
+      display: flex;
+      width: 25%;
+      margin-bottom: 10px;
+    }
+    .mat-mdc-form-field{
+      width:50px;
+    }
+    .mat-form-field.mat-mdc-form-field.ng-tns-c1205077789-3.mat-mdc-form-field-type-mat-input.mat-form-field-appearance-fill.mat-primary.ng-star-inserted {
+      width: 50px;
+  }
+      
+  
+  
+  }
+  /* Column Gap */
+  .product > * {
+    box-sizing: border-box;
+  }
+  .product > *:not(:last-child) {
+    margin-right: 32px;
+  }
+  .align_description{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    line-height: 23px;
+    max-height: 114px;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+  }
+  .align_image{
+    width:287px;
+    height: 300px;
+  }
+  
+  button{
+    margin:5px;
+  }
+  .centered-price {
+    text-align: center;
+  }
+  .price-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px; /* Set the height of the price container (adjust as needed) */
+  }
+  
+  .price {
+    font-size: 20px; /* Adjust the font size of the price */
+    font-weight: bold;
+  }
+  .align_bookname{
+    text-align: center;
+    font-size: 20px;
+  }
+  

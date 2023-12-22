@@ -1,0 +1,102 @@
+
+.main{
+	
+	
+	overflow: hidden;
+	
+	
+	
+}
+#chk{
+	display: none;
+}
+.button_width{
+	text-align: center;
+    margin: 0 auto;
+    width: 15%;
+}
+.signup{
+	position: relative;
+	width:100%;
+	height: 100%;
+	
+}
+label{
+	
+	font-size: 1.3em;
+	justify-content: center;
+	
+	margin: 10px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: .5s ease-in-out;
+}
+
+button{
+	width: 60%;
+	height: 40px;
+	margin: 10px auto;
+	justify-content: center;
+	display: block;
+	color: #ffffff;
+	background: #3f51b5;
+	font-size: 1em;
+	font-weight: bold;
+	margin-top: 20px;
+	outline: none;
+	border: none;
+	border-radius: 5px;
+	transition: .2s ease-in;
+	cursor: pointer;
+}
+
+button:hover{
+	background: #3f51b5;
+}
+
+
+
+#chk:checked ~ .login{
+	transform: translateY(-500px);
+}
+#chk:checked ~ .login label{
+	transform: scale(1);	
+}
+#chk:checked ~ .signup label{
+	transform: scale(.6);
+}
+mat-form-field{
+	height: 120px;
+	width: 400px;
+	padding: 0px;
+}
+
+  
+  .form-full-height {
+	height: 50%;
+  }
+
+  .mat-raised-button{
+	color:#3f51b5;
+  }
+
+
+  .show-password-button {
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    padding: 0px;
+    line-height: 1;
+	
+
+  }
+  .show-password-button:hover {
+    background-color: transparent;
+  }
+  .show-password-icon {
+    color: #888888;
+    font-size: 16px; /* Adjust the font size as needed */
+  }

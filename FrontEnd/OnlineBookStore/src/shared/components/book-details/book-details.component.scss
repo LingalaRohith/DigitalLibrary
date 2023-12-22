@@ -1,0 +1,64 @@
+.align_close_btn{
+  text-align: right;
+    float: right;
+    padding: 20px;
+    top: 5px;
+    color: rgb(255, 255, 255);
+    background-color: red;
+}
+.align_dialog{
+  min-width:1000px;
+    min-height: 650px;
+}
+.book_details{
+    top: 15%;
+    width: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+    margin: 0 auto;
+    .align_bookname{
+      width: 300px;
+    }
+    .align_image{
+        float:left ;
+        text-align: left;
+    }
+    .align_details{
+      float: left;
+      text-align: left;
+      padding-left: 20px;
+  }
+    .align_desc{
+      width: 340px;
+      overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    line-height: 23px;
+    max-height: 114px;
+    -webkit-line-clamp: 7;
+    -webkit-box-orient: vertical;
+    word-break: break-word;
+    }
+    .mat-mdc-card-content{
+        width:100%;
+    }
+    .mat-mdc-text-field-wrapper.mdc-text-field.ng-tns-c1205077789-3.mdc-text-field--filled.mdc-text-field--no-label{
+        width: 60px;
+      }
+      .quantity{
+        width:50px;
+      }
+      .mat-mdc-form-field{
+        width:50px;
+      }
+      .mat-form-field.mat-mdc-form-field.ng-tns-c1205077789-3.mat-mdc-form-field-type-mat-input.mat-form-field-appearance-fill.mat-primary.ng-star-inserted {
+        width: 50px;
+    }  
+    .product_image{
+        width: 300px;
+    height: 350px;
+    }
+    
+}

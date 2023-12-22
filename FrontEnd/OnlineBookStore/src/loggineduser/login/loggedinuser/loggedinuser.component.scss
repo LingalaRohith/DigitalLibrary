@@ -1,0 +1,109 @@
+.align_login_card{
+	width: 40%;
+    
+    margin: 0 auto;
+    margin-top: 12%;
+}
+.align_login_content{
+
+}
+.main{
+	//height: 100%;
+	
+	overflow: hidden;
+	
+	//border-radius: 10px;
+	
+}
+#chk{
+	display: none;
+}
+
+label{
+	color: #fff;
+	font-size: 2.3em;
+	justify-content: center;
+	display: flex;
+	margin: 60px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: .5s ease-in-out;
+}
+
+button{
+	width: 30%;
+	height: 40px;
+	margin: 10px auto;
+	justify-content: center;
+	display: block;
+	color: #ffffff;
+	background: #3f51b5;
+	font-size: 1em;
+	font-weight: bold;
+	margin-top: 20px;
+	outline: none;
+	border: none;
+	border-radius: 5px;
+	transition: .2s ease-in;
+	cursor: pointer;
+}
+.forgot-password {
+	color: #3f51b5;
+	text-decoration: underline;
+	cursor: pointer;
+  }
+  
+
+button:hover{
+	background: #3f51b5;
+}
+.login{
+	//height: 560px;
+	border-radius: 60% / 10%;
+}
+.login label{
+	color: #3f51b5;
+	transform: scale(.6);
+}
+
+#chk:checked ~ .login{
+	transform: translateY(-500px);
+}
+#chk:checked ~ .login label{
+	transform: scale(1);	
+}
+#chk:checked ~ .signup label{
+	transform: scale(.6);
+}
+mat-form-field{
+	height: 120px;
+	width: 400px;
+	padding-left:20px;
+}
+.show-password-button {
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    padding: 0px;
+    line-height: 1;
+	
+
+  }
+  .show-password-button:hover {
+    background-color: transparent;
+  }
+  .show-password-icon {
+    color: #888888;
+    font-size: 16px; /* Adjust the font size as needed */
+  }
+  
+  .form-full-height {
+	height: 50%;
+  }
+
+  .mat-raised-button{
+	color:#3f51b5;
+  }

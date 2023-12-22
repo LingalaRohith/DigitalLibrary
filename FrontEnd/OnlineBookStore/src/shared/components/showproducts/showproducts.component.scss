@@ -1,0 +1,39 @@
+
+  .filters {
+    width: 20%;
+    float: left;
+    text-align: left;
+    background-color: #E9F5FB;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-left: 5px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+  
+  
+  
+  
+.products{
+    width:75%;
+    float:left;
+    text-align:right;
+}
+.show_products{
+    
+    width: 100%;
+    padding-top: 75px;
+    .marginleft10{
+        margin-left:20%;
+        font-size: 18px;
+    }
+    .label.mdc-label{
+        font-size: 15px;
+    }
+    .back{
+        float: right;
+    margin-right: 5%;
+    cursor: pointer;
+    }
+}

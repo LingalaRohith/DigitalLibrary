@@ -1,0 +1,38 @@
+<div class="product">
+  
+  <mat-card class="item" *ngFor="let item of cart.results| paginate: { itemsPerPage: count, currentPage: p }">
+    
+    <img mat-card-image [src]=" item.image_data" alt="Photo of a product" class="align_image">
+    <mat-card-content>
+      <!-- <p class="aligntext_left align_description">
+        {{item.description}}
+      </p> -->
+      <div class="align_bookname"><p><b>{{item.title}}</b></p></div>
+      <div class="price-wrapper">
+        <p class="price">${{item.selling_Price}}</p>
+      </div>
+      
+      <!-- <p><b>${{item.selling_Price}}</b></p> -->
+    </mat-card-content>
+    <mat-card-actions>
+      <div *ngIf="item.quantity==0">
+        <button mat-raised-button color="primary" mat-button (click)="addtoCart(item)" color="primary">Add to
+          Cart</button>
+      </div>
+      <div *ngIf="item.quantity>0">
+        <button mat-icon-button (click)="removeItem(item)"><mat-icon>indeterminate_check_box</mat-icon></button>
+        <mat-form-field>
+          <input matInput type="number" class="quantity" [(ngModel)]="item.quantity" placeholder="{{item.quantity}}"
+            value="{{item.quantity}}" (change)="changeQuantity( item, $event)" (click)="setoldvalue(item.quantity)" />
+        </mat-form-field>
+        <button mat-icon-button (click)="addItem(item)"><mat-icon>add_box</mat-icon></button>
+
+      </div>
+      <button mat-raised-button color="primary" mat-button (click)="bookDetails(item)" color="primary">Details</button>
+    </mat-card-actions>
+  </mat-card>
+
+</div>
+<div>
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>

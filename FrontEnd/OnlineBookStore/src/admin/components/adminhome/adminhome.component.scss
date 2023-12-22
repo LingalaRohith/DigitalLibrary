@@ -1,0 +1,49 @@
+.adminhome{
+    .align_list{
+        width: 20%;
+        float: left;
+    }
+    .list_item{
+        cursor: pointer;
+    }
+    .managebooks{
+        width: 80%; float:right;
+        padding-left: 10px;
+        
+    }
+    .managepromotions{
+        .mat-mdc-form-field{
+            width: 254px;
+        }
+    }
+    .align-name{
+        width:50px;
+    }
+    .add_book{
+        float: right;
+    }
+    .vertical_line{
+        height: 150px;
+    position: relative;
+    width: 100%;
+    margin-top: -50%;
+    }
+    .aline_image{
+        width: 200px;
+        height:200px;
+    }
+    .aligntext_center {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      /* Optional: If you want to center align the button as well */
+      .aligntext_center button {
+        margin-top: 16px; /* Add some top margin to the button */
+      }
+      .bookTitle_align_edit_input{
+        width: 254px;
+      }
+      
+}
