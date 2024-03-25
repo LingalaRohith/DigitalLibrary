@@ -1,7 +1,7 @@
-# Online Bookstore System
+# Digital Library
 
 ## Description
-The Online Bookstore System is a web-based platform designed to facilitate the buying and selling of books in a convenient and efficient manner. Our system aims to bridge the gap between book buyers and sellers, offering a user-friendly interface that enhances the overall book purchasing experience. The proposed system uses modern technology to provide an accessible solution for book enthusiasts, authors, and publishers where users can effortlessly search for books, explore comprehensive book listings that include essential details such as book titles, ISBNs, and pricing.
+The Digital Libraryis a web-based platform designed to facilitate the buying and selling of books in a convenient and efficient manner. Our system aims to bridge the gap between book buyers and sellers, offering a user-friendly interface that enhances the overall book purchasing experience. The proposed system uses modern technology to provide an accessible solution for book enthusiasts, authors, and publishers where users can effortlessly search for books, explore comprehensive book listings that include essential details such as book titles, ISBNs, and pricing.
 
 ## Proposed Features and Functionalities
 1. **User Registration and Authentication:**
